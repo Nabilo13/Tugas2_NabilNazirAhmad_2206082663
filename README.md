@@ -44,3 +44,168 @@ Di sisi lain, MVT adalah varian yang digunakan oleh Django, kerangka kerja web P
 Sementara itu, MVVM adalah arsitektur yang umum digunakan dalam pengembangan aplikasi berbasis JavaScript atau mobile. Seperti MVT dan MVC, Model dalam MVVM bertanggung jawab atas logika bisnis dan mengelola state aplikasi. View menampilkan data dan menangani interaksi pengguna, sementara ViewModel bertindak sebagai penghubung antara Model dan View. ViewModel mengelola state View dan meneruskan perintah dari View ke Model. MVVM memanfaatkan konsep pengikatan data (data binding) yang memudahkan pengujian unit dan pemisahan antara pengembangan antarmuka pengguna (UI) dan logika bisnis aplikasi.
 
 Perbedaan utama antara ketiganya terletak dalam struktur dan fokus pengembangannya. MVC dan MVT memiliki struktur yang mirip, sedangkan MVVM memiliki pendekatan yang sedikit berbeda dengan adanya ViewModel. Pilihan antara ketiganya tergantung pada kebutuhan proyek dan jenis aplikasi yang sedang dikembangkan.
+
+5. Apa perbedaan antara form POST dan form GET dalam Django?
+Perbedaan antara form POST dan form GET dalam Django adalah dalam cara mereka digunakan untuk berinteraksi dengan server dan bagaimana data dikirim dan diterima.
+
+Form POST digunakan untuk mengirim data ke server yang akan digunakan untuk memproses informasi tersebut, seperti menambahkan data ke database atau melakukan tindakan lainnya. Data yang dikirim melalui metode POST tidak ditampilkan secara langsung di URL, sehingga lebih aman dari segi keamanan karena data sensitif seperti kata sandi tidak terlihat dalam URL. Selain itu, penggunaan metode POST tidak terbatas pada panjang data yang dapat dikirim, sehingga cocok untuk mengirim data yang lebih besar atau kompleks.
+
+Di sisi lain, form GET digunakan untuk mengambil data dari server. Data yang dikirim melalui metode GET akan ditampilkan di URL sebagai query parameter. Meskipun metode ini berguna untuk mengambil data, URL terbatas pada panjang tertentu, sehingga tidak cocok untuk mengirim data yang sangat besar. Data yang ditampilkan di URL juga dapat terlihat oleh siapa saja yang melihatnya, sehingga tidak cocok untuk data sensitif.
+
+6. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+Perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data adalah dalam format, penggunaan, dan tujuan utama masing-masing format.
+
+XML, atau eXtensible Markup Language, digunakan untuk mengorganisasi dan menyimpan data dalam format hirarki yang fleksibel. Ini adalah format yang sangat kuat yang dapat digunakan untuk merepresentasikan berbagai jenis data. Namun, XML memiliki sintaks yang kompleks, yang membuatnya lebih cocok untuk pertukaran data yang kompleks dan terstruktur.
+
+JSON, atau JavaScript Object Notation, adalah format pertukaran data yang ringan yang digunakan untuk menyimpan dan mengirim data dalam bentuk teks. JSON terdiri dari pasangan "nama-nilai" yang mudah dibaca oleh manusia. Keuntungan utama JSON adalah kesederhanaannya, kecepatan pengolahan yang baik, dan kemampuan untuk digunakan dalam berbagai bahasa pemrograman. JSON sering digunakan dalam aplikasi web modern untuk pertukaran data antara server dan klien.
+
+HTML, atau Hypertext Markup Language, adalah bahasa markup yang digunakan untuk membuat struktur halaman web. HTML tidak secara khusus dirancang untuk pertukaran data, melainkan untuk merender dan mengatur tampilan konten web. HTML mengandung elemen-elemen seperti tag, atribut, dan konten yang mendefinisikan tampilan dan interaksi di dalam halaman web.
+
+Dalam ringkasan, XML cocok untuk data yang kompleks dan terstruktur, JSON adalah pilihan yang baik untuk pertukaran data ringan antara aplikasi web, sedangkan HTML digunakan untuk merender dan mengorganisasi konten dalam halaman web. Setiap format memiliki kegunaannya sendiri tergantung pada kebutuhan dan konteks aplikasi yang sedang digunakan.
+
+ 7. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+JSON sering digunakan dalam pertukaran data antara aplikasi web modern karena beberapa alasan utama. Pertama, JSON adalah format pertukaran data yang sangat ringan. Data JSON disimpan dalam format teks sederhana, yang mengurangi overhead dalam pengiriman data melalui jaringan. Ini sangat penting dalam aplikasi web yang berfokus pada kinerja dan kecepatan.
+
+Kedua, JSON memiliki struktur yang mudah dibaca oleh manusia. Ini membuatnya lebih mudah untuk dimengerti dan didebug oleh pengembang saat mereka bekerja dengan data. Dalam pengembangan web yang cepat dan berkelanjutan, kemampuan untuk dengan cepat memeriksa dan memahami data sangat berharga.
+
+Ketiga, browser web modern memiliki dukungan bawaan untuk JSON. Hal ini memungkinkan data JSON yang diterima dari server untuk dengan mudah diparsing menjadi objek JavaScript, yang dapat digunakan langsung dalam aplikasi web tanpa perlu mengonversi format data. Ini membuat JSON menjadi pilihan yang sangat efisien untuk mengirimkan data antara server dan klien dalam aplikasi web.
+
+Terakhir, JSON mendapatkan dukungan luas di banyak bahasa pemrograman. Ini berarti bahwa data JSON dapat dengan mudah diproses dan digunakan dalam berbagai konteks pengembangan, tidak hanya dalam lingkungan web. Ini memberikan fleksibilitas yang besar dalam mengintegrasikan sistem yang berbeda dan mengirimkan data antar aplikasi dengan JSON sebagai format pertukarannya.
+
+8. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+Langkah pertama dalam mengimplementasikan checklist tersebut adalah dengan membuat model yang akan mewakili objek yang ingin Anda tambahkan ke dalam aplikasi Django. Misalnya, kita dapat membuat model bernama MyModel yang memiliki beberapa bidang seperti nama dan deskripsi. Setelah membuat model, langkah selanjutnya adalah membuat sebuah form yang akan digunakan untuk mengisi data objek tersebut. Ini dapat dilakukan dengan menggunakan Django forms. Kita perlu membuat sebuah form dengan menggunakan MyModel sebagai modelnya, sehingga kita dapat dengan mudah menghubungkannya dengan model yang telah kita buat. Setelah membuat form, kita dapat menggunakannya dalam template HTML untuk membuat halaman tambahan di aplikasi kita yang memungkinkan pengguna untuk menambahkan objek baru.
+
+Langkah kedua adalah menambahkan lima fungsi views untuk melihat objek dalam berbagai format. Kita perlu membuat views untuk menghasilkan tampilan dalam format HTML, XML, JSON, XML berdasarkan ID, dan JSON berdasarkan ID. Misalnya, kita dapat membuat views seperti view_objects_html, view_objects_xml, view_objects_json, view_object_xml_by_id, dan view_object_json_by_id. Views ini akan mengambil data dari model MyModel dan merendernya dalam format yang sesuai, seperti HTML atau JSON. Kita dapat menggunakan fungsi serializers dari Django untuk mengonversi objek Python ke format XML atau JSON.
+
+Langkah ketiga adalah membuat routing URL untuk masing-masing views yang telah kita buat pada langkah kedua. Kita perlu menentukan URL yang akan memicu setiap view tersebut. Ini dapat dilakukan dalam file urls.py dalam app Django kita. Misalnya, kita dapat menentukan URL seperti /objects/html/ untuk view HTML, /objects/xml/ untuk view XML, dan seterusnya. Dengan melakukan ini, kita dapat mengakses masing-masing view dengan URL yang sesuai.
+
+Mengakses kelima URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman, dan menambahkannya ke dalam README.md.
+Saya tidak tahu gimana cara upload screenshot ke sini jadi saya akan buat google drive
+1. Screenshot untuk Mengembalikan Data dalam Bentuk HTML
+https://drive.google.com/file/d/12QFKpfj5WXPbGapLXSL_AS8-24drLHsb/view?usp=sharing
+https://drive.google.com/file/d/1ii5jFaPX7JNzv57wD-m3DjMPQKTff8_q/view?usp=sharing
+https://drive.google.com/file/d/1ZzcLUmQULYHAJVWb6IdJad8S59OIgOOl/view?usp=sharing
+![Screenshot 2023-09-20 085345](https://github.com/Nabilo13/Tugas2_NabilNazirAhmad_2206082663/assets/80833670/8beeaf75-c22a-4123-8834-126c110f7a78)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+</head>
+
+<body>
+
+
+	<h1>Pengelolan koleksi perpustakaan</h1>
+
+	<h5>Name:</h5>
+	<p>Nabil Nazir Ahmad</p>
+
+	<h5>Class:</h5>
+	<p>PBP B</p>
+
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Description</th>
+			<th>Date Added</th>
+			<th>Amount</th>
+		</tr>
+
+
+
+
+		<tr>
+			<td>William Sean Poster</td>
+			<td>2</td>
+			<td>bcehb</td>
+			<td>Sept. 18, 2023</td>
+			<td>2</td>
+		</tr>
+
+	</table>
+
+	<br />
+
+	<a href="/create-product">
+		<button>
+        Add New Product
+    </button>
+	</a>
+
+
+</body>
+
+</html>
+
+2. Mengembalikan Data dalam Bentuk XML
+https://drive.google.com/file/d/164KKjPs8rwTJKGAqge0j0cvPWBm6ddAN/view?usp=sharing
+![Screenshot 2023-09-20 090053](https://github.com/Nabilo13/Tugas2_NabilNazirAhmad_2206082663/assets/80833670/a25889b8-74db-4697-a120-d7d3856e4c1e)
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="main.product" pk="1">
+        <field name="name" type="CharField">William Sean Poster</field>
+        <field name="date_added" type="DateField">2023-09-18</field>
+        <field name="amount" type="IntegerField">2</field>
+        <field name="price" type="IntegerField">2</field>
+        <field name="description" type="TextField">bcehb</field>
+    </object>
+</django-objects>
+
+3. Mengembalikan Data dalam Bentuk JSON
+https://drive.google.com/file/d/1JXMKQH79_ec0-XBVJwaRnpztuQoOs1_D/view?usp=sharing
+![Screenshot 2023-09-20 090337](https://github.com/Nabilo13/Tugas2_NabilNazirAhmad_2206082663/assets/80833670/ede6f0d3-4d14-439b-a360-69d75705936c)
+[
+    {
+        "model": "main.product",
+        "pk": 1,
+        "fields": {
+            "name": "William Sean Poster",
+            "date_added": "2023-09-18",
+            "amount": 2,
+            "price": 2,
+            "description": "bcehb"
+        }
+    }
+]
+
+4. Mengembalikan Data Berdasarkan ID dalam Bentuk XML by ID
+https://drive.google.com/file/d/1_2d_A2DRDt6b8oRXo5UFuKCVaW-HxEVP/view?usp=sharing
+![Screenshot 2023-09-20 090558](https://github.com/Nabilo13/Tugas2_NabilNazirAhmad_2206082663/assets/80833670/51c48d27-cdf4-42f7-82db-a29f3cc0ab2d)
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+    <object model="main.product" pk="1">
+        <field name="name" type="CharField">William Sean Poster</field>
+        <field name="date_added" type="DateField">2023-09-18</field>
+        <field name="amount" type="IntegerField">2</field>
+        <field name="price" type="IntegerField">2</field>
+        <field name="description" type="TextField">bcehb</field>
+    </object>
+</django-objects>
+
+5. Mengembalikan Data Berdasarkan ID dalam Bentuk JSON by ID
+https://drive.google.com/file/d/1nynw1BUqlCsH7x4Nexy70NEmV2LBr1ky/view?usp=sharing
+![Screenshot 2023-09-20 090802](https://github.com/Nabilo13/Tugas2_NabilNazirAhmad_2206082663/assets/80833670/dccc2a04-e18f-48d0-8e93-d3d1aec319ec)
+[
+    {
+        "model": "main.product",
+        "pk": 1,
+        "fields": {
+            "name": "William Sean Poster",
+            "date_added": "2023-09-18",
+            "amount": 2,
+            "price": 2,
+            "description": "bcehb"
+        }
+    }
+]
+
+
+
+
+
+
