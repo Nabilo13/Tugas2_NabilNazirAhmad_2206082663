@@ -1,51 +1,107 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #000; /* Warna hitam */
+        color: #1178e6; /* Warna teks putih */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-<h1>Pengelolan koleksi perpustakaan</h1>
+    h1 {
+        color: #008CBA; /* Biru tua */
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-<h5>Name:</h5>
-<p>{{name}}</p>
+    h5 {
+        color: #E60000; /* Merah */
+    }
 
-<h5>Class:</h5>
-<p>{{class}}</p>
+    p {
+        color: #009933; /* Hijau tua */
+    }
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Date Added</th>
-        <th>Amount</th>
-    </tr>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 
-    {% for product in products %}
+    th {
+        background-color: #FFD700; /* Kuning emas */
+        color: #333;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .last-login {
+        color: #9900CC; /* Ungu tua */
+        margin-top: 20px;
+    }
+
+    a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #FF5722; /* Merah oranye */
+        color: #fff;
+        text-decoration: none;
+        border-radius: 3px;
+    }
+
+    a.button:hover {
+        background-color: #D84315; /* Merah gelap oranye */
+    }
+</style>
+
+<div>
+    <h1>Pengelolan koleksi perpustakaan</h1>
+
+    <h5>Name:</h5>
+    <p>{{name}}</p>
+
+    <h5>Class:</h5>
+    <p>{{class}}</p>
+
+    <table>
         <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.date_added}}</td>
-            <td>{{product.amount}}</td>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Amount</th>
         </tr>
-    {% endfor %}
-</table>
 
-<br />
+        {% for product in products %}
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.date_added}}</td>
+                <td>{{product.amount}}</td>
+            </tr>
+        {% endfor %}
+    </table>
 
-<a href="{% url 'main:create_product' %}">
-    <button>
+    <div class="last-login">
+        <h5>Sesi terakhir login: {{ last_login }}</h5>
+    </div>
+
+    <a href="{% url 'main:create_product' %}" class="button">
         Add New Product
-    </button>
-</a>
-<a href="{% url 'main:logout' %}">
-    <button>
+    </a>
+    <a href="{% url 'main:logout' %}" class="button">
         Logout
-    </button>
-</a>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+    </a>
+</div>
+
 {% endblock content %}
-
-
-

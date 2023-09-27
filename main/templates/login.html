@@ -5,11 +5,66 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #000000;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-<div class = "login">
+    .login {
+        background-color: #ffc107; /* Yellow background color */
+        border: 1px solid #ff5722; /* Red border color */
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
 
+    h1 {
+        color: #e91e63; /* Pink heading color */
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ff9800; /* Orange border color */
+        border-radius: 3px;
+    }
+
+    .btn {
+        background-color: #4caf50; /* Green button color */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #388e3c; /* Dark green button color on hover */
+    }
+
+    .register-link {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+    }
+</style>
+
+<div class="login">
     <h1>Login</h1>
-
     <form method="POST" action="">
         {% csrf_token %}
         <table>
@@ -17,29 +72,23 @@
                 <td>Username: </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
             </tr>
-                    
             <tr>
                 <td>Password: </td>
                 <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
-
             <tr>
                 <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
+                <td><input class="btn login_btn" type="submit" value="Login"> <i class="fas fa-sign-in-alt"></i></td>
             </tr>
         </table>
     </form>
-
     {% if messages %}
         <ul>
             {% for message in messages %}
                 <li>{{ message }}</li>
             {% endfor %}
         </ul>
-    {% endif %}     
-        
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
+    {% endif %}
+    <p class="register-link">Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a></p>
 </div>
-
 {% endblock content %}
