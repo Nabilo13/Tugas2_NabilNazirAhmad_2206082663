@@ -236,5 +236,64 @@ Pengembang perlu mengelola cookie dengan bijak, terutama yang menyimpan data sen
     
 Untuk mengimplementasikan checklist yang telah disebutkan, langkah pertama adalah memastikan aplikasi Django kita telah siap dengan model yang diperlukan dan konfigurasi basis data yang sesuai. Selanjutnya, kita perlu membuat fitur registrasi pengguna. Ini melibatkan pembuatan view yang menangani proses registrasi, penggunaan form Django, dan URL pattern yang sesuai. Kemudian, kita dapat mengimplementasikan fitur login dengan view yang memproses masukan pengguna dan melakukan autentikasi menggunakan django.contrib.auth. Jangan lupa membuat template HTML untuk form login. Selain itu, buat view untuk logout pengguna dan sesuaikan URL pattern. Untuk menghubungkan model Item dengan User, gunakan ForeignKey pada model Item. Terakhir, kita dapat menampilkan informasi pengguna yang login seperti username di halaman utama dengan mengakses request.user, dan untuk penggunaan cookies seperti last_login, kita dapat menggunakan request.session. Pastikan untuk mengatur URL, template, dan tampilan yang sesuai untuk setiap langkah ini. Dengan mengikuti langkah-langkah ini, kita akan dapat mengimplementasikan semua fitur yang diperlukan dengan lancar dalam aplikasi web Django kita.
 
+14. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
 
+Seluruh jenis selector CSS memiliki manfaat yang berbeda-beda dalam memodifikasi tampilan elemen-elemen dalam dokumen HTML.
+
+Universal Selector (*) adalah pilihan yang baik jika Anda ingin memberikan gaya secara global pada semua elemen di dalam dokumen, seperti mengatur margin atau padding secara umum.
+
+Type Selector (Tag Selector) berguna ketika Anda ingin mengubah gaya elemen khusus berdasarkan jenis elemennya, seperti mengubah warna teks pada semua tag <p> dalam dokumen.
+
+Class Selector (.classname) sangat berguna untuk mengganti gaya beberapa elemen yang memiliki class yang sama, seperti mengatur warna teks atau latar belakang.
+
+ID Selector (#idname) digunakan untuk menargetkan elemen unik dalam dokumen, seperti elemen dengan atribut id yang unik. Ini memungkinkan Anda untuk memberikan gaya atau perilaku khusus pada elemen tertentu.
+Pemilihan jenis selector yang tepat tergantung pada kebutuhan spesifik desain dan perilaku halaman web yang Anda bangun.
+
+15. Jelaskan HTML5 Tag yang kamu ketahui
+
+<header> digunakan untuk bagian atas halaman, yang biasanya berisi judul dan navigasi, sehingga memberikan struktur pada halaman web.
+
+<nav> adalah tag yang digunakan untuk membuat menu navigasi, yang membantu pengguna berpindah antara halaman-halaman atau bagian-bagian penting dalam situs web.
+
+<section> digunakan untuk mengelompokkan konten terkait dalam sebuah halaman web. Ini membantu dalam mengatur dan memberikan makna pada struktur halaman.
+
+<article> digunakan untuk mengelompokkan konten yang mandiri, seperti berita atau posting blog. Ini membantu dalam menandai konten utama dalam halaman.
+
+<aside> adalah tag yang digunakan untuk menandai konten yang berhubungan dengan konten utama tetapi bukan bagian integral dari konten tersebut, seperti sidebar atau kutipan terkait.
+
+<footer> digunakan untuk bagian bawah halaman web, yang sering berisi informasi hak cipta, tautan terkait, atau detail kontak.
+
+<video> dan <audio> digunakan untuk memasukkan media video atau audio ke dalam halaman web, memungkinkan penyajian konten multimedia secara langsung di halaman.
+
+<canvas> digunakan untuk menggambar grafis dengan menggunakan JavaScript, yang memungkinkan pembuatan grafik interaktif dan animasi.
+
+<form> digunakan untuk membuat formulir input, yang memungkinkan pengguna untuk mengirimkan data ke server, seperti formulir kontak atau pendaftaran.
+
+<input> adalah tag yang digunakan dalam formulir untuk menentukan elemen input, seperti kotak teks, tombol radio, atau kotak centang, yang memungkinkan pengguna untuk memasukkan data atau membuat pilihan.
+
+Dengan menggunakan tag-tag HTML5 ini, pengembang web dapat membangun halaman web yang lebih terstruktur, interaktif, dan semantik, yang membuat pengalaman pengguna lebih baik dan lebih memahami konteks dan makna dari konten halaman web.
+
+16. Jelaskan perbedaan antara margin dan padding
+
+Margin adalah ruang yang terletak di sekitar elemen, yaitu di luar batas elemen tersebut. Margin digunakan untuk mengatur jarak antara elemen dengan elemen lain di sekitarnya atau dengan elemen-elemen lain di halaman. Margin tidak memiliki warna atau latar belakang, dan ia memberikan ruang kosong di sekeliling elemen tersebut. Margin sering digunakan untuk mengatur jarak antara elemen-elemen dalam layout dan memastikan elemen-elemen tersebut tidak saling berdekatan terlalu rapat.
+
+Padding, di sisi lain, adalah ruang yang terletak di antara konten elemen dan batas elemen tersebut (border). Padding digunakan untuk mengatur jarak antara konten dalam elemen dan batas elemen itu sendiri. Padding dapat memiliki warna atau latar belakang, dan ia memberikan ruang di antara konten dan tepi elemen tersebut. Padding sering digunakan untuk memberikan ruang di sekitar teks atau konten dalam elemen, sehingga kontennya tidak terlalu dekat dengan batas elemen.
+
+17. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+Tailwind CSS adalah framework CSS yang difokuskan pada penggunaan kelas-kelas utilitas untuk membangun tampilan. Ini berarti Anda mendefinisikan gaya elemen dengan menambahkan kelas langsung ke elemen HTML. Tailwind memberikan fleksibilitas yang tinggi untuk menyesuaikan tampilan sesuai kebutuhan Anda. Dengan Tailwind, Anda dapat dengan mudah mengkustomisasi setiap aspek desain dengan menambah atau menghapus kelas-kelas yang sesuai.
+
+Di sisi lain, Bootstrap adalah framework CSS yang sudah dirancang dengan desain responsif dan modern yang siap pakai. Bootstrap menyediakan banyak komponen UI siap pakai, seperti navbar, modal, kartu, dan banyak lagi. Ini membuatnya ideal untuk pengembangan yang cepat dan efisien, terutama jika Anda ingin memiliki tampilan yang mirip dengan desain bawaan Bootstrap. Namun, Bootstrap mungkin kurang fleksibel daripada Tailwind ketika datang ke penyesuaian desain yang sangat kustom.
+
+Kapan Anda harus menggunakan Bootstrap atau Tailwind tergantung pada proyek dan kebutuhan Anda. Jika Anda ingin prototyping cepat, membangun situs dengan komponen UI siap pakai, atau mencari tampilan yang responsif tanpa banyak penyesuaian, Bootstrap mungkin menjadi pilihan yang baik. Di sisi lain, jika Anda ingin memiliki kendali penuh atas tampilan dan lebih suka menulis sedikit CSS kustom, atau jika Anda ingin menciptakan tampilan yang sangat unik, maka Tailwind bisa menjadi pilihan yang lebih sesuai.
+
+18. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
+
+Untuk mengimplementasikan kustomisasi desain pada templat HTML yang telah dibuat pada Tugas 4 dengan menggunakan CSS atau framework CSS seperti Bootstrap, Tailwind, atau Bulma, kita perlu memahami desain yang ingin dihasilkan terlebih dahulu. Setelah itu, kita dapat memilih apakah ingin menggunakan framework CSS atau mengelola kustomisasi dengan CSS biasa.
+
+Setelah memahami desain yang diinginkan, kita dapat memulai dengan mengkustomisasi halaman login, register, dan daftar inventori sesuai dengan preferensi kita. Ini bisa melibatkan perubahan dalam warna, tata letak, dan elemen-elemen seperti tombol dan input. Untuk halaman daftar inventori, kita bisa mempertimbangkan penggunaan elemen seperti kartu (card) untuk memberikan tampilan yang lebih menarik.
+
+Setelah menerapkan kustomisasi, penting untuk melakukan pengujian dan perbaikan jika diperlukan. Pastikan tampilan dan fungsionalitas halaman sesuai dengan yang diinginkan. Selanjutnya, dokumentasikan semua perubahan yang kita buat agar mudah diakses oleh kita atau tim kita di masa mendatang.
+
+Dengan langkah-langkah ini, kita dapat menghasilkan tampilan yang sesuai dengan desain yang diinginkan pada halaman-halaman tersebut, baik dengan menggunakan CSS biasa maupun dengan memanfaatkan framework CSS yang kita pilih.
 
