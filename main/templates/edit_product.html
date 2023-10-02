@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #000; /* Warna hitam untuk latar belakang */
+        color: #fff; /* Warna teks putih */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        color: #008CBA; /* Biru tua */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        background-color: #333; /* Warna abu-abu gelap untuk latar belakang form */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    table {
+        width: 100%;
+    }
+
+    td {
+        padding: 10px;
+    }
+
+    input[type="submit"] {
+        background-color: #FF5722; /* Merah oranye untuk tombol */
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #D84315; /* Merah gelap oranye pada hover tombol */
+    }
+</style>
+
+<h1>Edit Product</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Edit Product"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}
