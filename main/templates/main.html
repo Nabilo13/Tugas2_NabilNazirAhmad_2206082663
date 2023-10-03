@@ -3,25 +3,25 @@
 {% block content %}
 <style>
     body {
-        background-color: #000; /* Warna hitam */
-        color: #1178e6; /* Warna teks putih */
+        background-color: #000; 
+        color: #1178e6; 
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
     }
 
     h1 {
-        color: #008CBA; /* Biru tua */
+        color: #008CBA;
         text-align: center;
         margin-bottom: 20px;
     }
 
     h5 {
-        color: #E60000; /* Merah */
+        color: #E60000; 
     }
 
     p {
-        color: #009933; /* Hijau tua */
+        color: #009933; 
     }
 
     table {
@@ -36,7 +36,7 @@
     }
 
     th {
-        background-color: #FFD700; /* Kuning emas */
+        background-color: #FFD700; 
         color: #333;
     }
 
@@ -45,22 +45,66 @@
     }
 
     .last-login {
-        color: #9900CC; /* Ungu tua */
+        color: #9900CC; 
         margin-top: 20px;
     }
 
     a.button {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #FF5722; /* Merah oranye */
+        background-color: #FF5722; 
         color: #fff;
         text-decoration: none;
         border-radius: 3px;
     }
 
     a.button:hover {
-        background-color: #D84315; /* Merah gelap oranye */
+        background-color: #D84315; 
     }
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    /* Kartu */
+    .card {
+        background-color: #333;
+        color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        width: 300px; 
+    }
+
+    /* Gaya untuk judul kartu */
+    .card h2 {
+        color: #008CBA;
+        text-align: center;
+    }
+
+    /* Tombol di dalam kartu */
+    .card button {
+        background-color: #FF5722; 
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto;
+    }
+
+    .card button:hover {
+        background-color: #D84315; 
+    }
+
+    .card:last-child{
+        background-color: yellow; 
+        color: black; 
+    }
+
 </style>
 
 <div>
@@ -72,38 +116,23 @@
     <h5>Class:</h5>
     <p>{{class}}</p>
 
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Date Added</th>
-            <th>Amount</th>
-        </tr>
-
+    <div class="card-container">
         {% for product in products %}
-            <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.date_added}}</td>
-                <td>{{product.amount}}</td>
-                <td>
-                    <a href="{% url 'main:edit_product' product.pk %}">
-                        <button>
-                            Edit
-                        </button>
-                    </a>
-                    <a href="{% url 'main:delete_product' product.pk %}">
-                        <button>
-                            Delete
-                        </button>
-                    </a>
-                </td>
-            
-            </tr>
+            <div class="card">
+                <h2>{{product.name}}</h2>
+                <p>Price: {{product.price}}</p>
+                <p>Description: {{product.description}}</p>
+                <p>Date Added: {{product.date_added}}</p>
+                <p>Amount: {{product.amount}}</p>
+                <a href="{% url 'main:edit_product' product.pk %}">
+                    <button>Edit</button>
+                </a>
+                <a href="{% url 'main:delete_product' product.pk %}">
+                    <button>Delete</button>
+                </a>
+            </div>
         {% endfor %}
-    </table>
+    </div>
 
     <div class="last-login">
         <h5>Sesi terakhir login: {{ last_login }}</h5>
