@@ -73,7 +73,7 @@ Ketiga, browser web modern memiliki dukungan bawaan untuk JSON. Hal ini memungki
 Terakhir, JSON mendapatkan dukungan luas di banyak bahasa pemrograman. Ini berarti bahwa data JSON dapat dengan mudah diproses dan digunakan dalam berbagai konteks pengembangan, tidak hanya dalam lingkungan web. Ini memberikan fleksibilitas yang besar dalam mengintegrasikan sistem yang berbeda dan mengirimkan data antar aplikasi dengan JSON sebagai format pertukarannya.
 
 8. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-Langkah pertama dalam mengimplementasikan checklist tersebut adalah dengan membuat model yang akan mewakili objek yang ingin Anda tambahkan ke dalam aplikasi Django. Misalnya, kita dapat membuat model bernama MyModel yang memiliki beberapa bidang seperti nama dan deskripsi. Setelah membuat model, langkah selanjutnya adalah membuat sebuah form yang akan digunakan untuk mengisi data objek tersebut. Ini dapat dilakukan dengan menggunakan Django forms. Kita perlu membuat sebuah form dengan menggunakan MyModel sebagai modelnya, sehingga kita dapat dengan mudah menghubungkannya dengan model yang telah kita buat. Setelah membuat form, kita dapat menggunakannya dalam template HTML untuk membuat halaman tambahan di aplikasi kita yang memungkinkan pengguna untuk menambahkan objek baru.
+Langkah pertama dalam mengimplementasikan checklist tersebut adalah dengan membuat model yang akan mewakili objek yang ingin kita tambahkan ke dalam aplikasi Django. Misalnya, kita dapat membuat model bernama MyModel yang memiliki beberapa bidang seperti nama dan deskripsi. Setelah membuat model, langkah selanjutnya adalah membuat sebuah form yang akan digunakan untuk mengisi data objek tersebut. Ini dapat dilakukan dengan menggunakan Django forms. Kita perlu membuat sebuah form dengan menggunakan MyModel sebagai modelnya, sehingga kita dapat dengan mudah menghubungkannya dengan model yang telah kita buat. Setelah membuat form, kita dapat menggunakannya dalam template HTML untuk membuat halaman tambahan di aplikasi kita yang memungkinkan pengguna untuk menambahkan objek baru.
 
 Langkah kedua adalah menambahkan lima fungsi views untuk melihat objek dalam berbagai format. Kita perlu membuat views untuk menghasilkan tampilan dalam format HTML, XML, JSON, XML berdasarkan ID, dan JSON berdasarkan ID. Misalnya, kita dapat membuat views seperti view_objects_html, view_objects_xml, view_objects_json, view_object_xml_by_id, dan view_object_json_by_id. Views ini akan mengambil data dari model MyModel dan merendernya dalam format yang sesuai, seperti HTML atau JSON. Kita dapat menggunakan fungsi serializers dari Django untuk mengonversi objek Python ke format XML atau JSON.
 
@@ -240,14 +240,14 @@ Untuk mengimplementasikan checklist yang telah disebutkan, langkah pertama adala
 
 Seluruh jenis selector CSS memiliki manfaat yang berbeda-beda dalam memodifikasi tampilan elemen-elemen dalam dokumen HTML.
 
-Universal Selector (*) adalah pilihan yang baik jika Anda ingin memberikan gaya secara global pada semua elemen di dalam dokumen, seperti mengatur margin atau padding secara umum.
+Universal Selector (*) adalah pilihan yang baik jika kita ingin memberikan gaya secara global pada semua elemen di dalam dokumen, seperti mengatur margin atau padding secara umum.
 
-Type Selector (Tag Selector) berguna ketika Anda ingin mengubah gaya elemen khusus berdasarkan jenis elemennya, seperti mengubah warna teks pada semua tag <p> dalam dokumen.
+Type Selector (Tag Selector) berguna ketika kita ingin mengubah gaya elemen khusus berdasarkan jenis elemennya, seperti mengubah warna teks pada semua tag <p> dalam dokumen.
 
 Class Selector (.classname) sangat berguna untuk mengganti gaya beberapa elemen yang memiliki class yang sama, seperti mengatur warna teks atau latar belakang.
 
-ID Selector (#idname) digunakan untuk menargetkan elemen unik dalam dokumen, seperti elemen dengan atribut id yang unik. Ini memungkinkan Anda untuk memberikan gaya atau perilaku khusus pada elemen tertentu.
-Pemilihan jenis selector yang tepat tergantung pada kebutuhan spesifik desain dan perilaku halaman web yang Anda bangun.
+ID Selector (#idname) digunakan untuk menargetkan elemen unik dalam dokumen, seperti elemen dengan atribut id yang unik. Ini memungkinkan kita untuk memberikan gaya atau perilaku khusus pada elemen tertentu.
+Pemilihan jenis selector yang tepat tergantung pada kebutuhan spesifik desain dan perilaku halaman web yang kita bangun.
 
 15. Jelaskan HTML5 Tag yang kamu ketahui
 
@@ -257,9 +257,9 @@ Pemilihan jenis selector yang tepat tergantung pada kebutuhan spesifik desain da
 
 <section> digunakan untuk mengelompokkan konten terkait dalam sebuah halaman web. Ini membantu dalam mengatur dan memberikan makna pada struktur halaman.
 
-<article> digunakan untuk mengelompokkan konten yang mandiri, seperti berita atau posting blog. Ini membantu dalam menandai konten utama dalam halaman.
+<article> digunakan untuk mengelompokkan konten yang mandiri, seperti berita atau posting blog. Ini membantu dalam menkitai konten utama dalam halaman.
 
-<aside> adalah tag yang digunakan untuk menandai konten yang berhubungan dengan konten utama tetapi bukan bagian integral dari konten tersebut, seperti sidebar atau kutipan terkait.
+<aside> adalah tag yang digunakan untuk menkitai konten yang berhubungan dengan konten utama tetapi bukan bagian integral dari konten tersebut, seperti sidebar atau kutipan terkait.
 
 <footer> digunakan untuk bagian bawah halaman web, yang sering berisi informasi hak cipta, tautan terkait, atau detail kontak.
 
@@ -281,11 +281,11 @@ Padding, di sisi lain, adalah ruang yang terletak di antara konten elemen dan ba
 
 17. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
 
-Tailwind CSS adalah framework CSS yang difokuskan pada penggunaan kelas-kelas utilitas untuk membangun tampilan. Ini berarti Anda mendefinisikan gaya elemen dengan menambahkan kelas langsung ke elemen HTML. Tailwind memberikan fleksibilitas yang tinggi untuk menyesuaikan tampilan sesuai kebutuhan Anda. Dengan Tailwind, Anda dapat dengan mudah mengkustomisasi setiap aspek desain dengan menambah atau menghapus kelas-kelas yang sesuai.
+Tailwind CSS adalah framework CSS yang difokuskan pada penggunaan kelas-kelas utilitas untuk membangun tampilan. Ini berarti kita mendefinisikan gaya elemen dengan menambahkan kelas langsung ke elemen HTML. Tailwind memberikan fleksibilitas yang tinggi untuk menyesuaikan tampilan sesuai kebutuhan kita. Dengan Tailwind, kita dapat dengan mudah mengkustomisasi setiap aspek desain dengan menambah atau menghapus kelas-kelas yang sesuai.
 
-Di sisi lain, Bootstrap adalah framework CSS yang sudah dirancang dengan desain responsif dan modern yang siap pakai. Bootstrap menyediakan banyak komponen UI siap pakai, seperti navbar, modal, kartu, dan banyak lagi. Ini membuatnya ideal untuk pengembangan yang cepat dan efisien, terutama jika Anda ingin memiliki tampilan yang mirip dengan desain bawaan Bootstrap. Namun, Bootstrap mungkin kurang fleksibel daripada Tailwind ketika datang ke penyesuaian desain yang sangat kustom.
+Di sisi lain, Bootstrap adalah framework CSS yang sudah dirancang dengan desain responsif dan modern yang siap pakai. Bootstrap menyediakan banyak komponen UI siap pakai, seperti navbar, modal, kartu, dan banyak lagi. Ini membuatnya ideal untuk pengembangan yang cepat dan efisien, terutama jika kita ingin memiliki tampilan yang mirip dengan desain bawaan Bootstrap. Namun, Bootstrap mungkin kurang fleksibel daripada Tailwind ketika datang ke penyesuaian desain yang sangat kustom.
 
-Kapan Anda harus menggunakan Bootstrap atau Tailwind tergantung pada proyek dan kebutuhan Anda. Jika Anda ingin prototyping cepat, membangun situs dengan komponen UI siap pakai, atau mencari tampilan yang responsif tanpa banyak penyesuaian, Bootstrap mungkin menjadi pilihan yang baik. Di sisi lain, jika Anda ingin memiliki kendali penuh atas tampilan dan lebih suka menulis sedikit CSS kustom, atau jika Anda ingin menciptakan tampilan yang sangat unik, maka Tailwind bisa menjadi pilihan yang lebih sesuai.
+Kapan kita harus menggunakan Bootstrap atau Tailwind tergantung pada proyek dan kebutuhan kita. Jika kita ingin prototyping cepat, membangun situs dengan komponen UI siap pakai, atau mencari tampilan yang responsif tanpa banyak penyesuaian, Bootstrap mungkin menjadi pilihan yang baik. Di sisi lain, jika kita ingin memiliki kendali penuh atas tampilan dan lebih suka menulis sedikit CSS kustom, atau jika kita ingin menciptakan tampilan yang sangat unik, maka Tailwind bisa menjadi pilihan yang lebih sesuai.
 
 18. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
 
@@ -296,4 +296,40 @@ Setelah memahami desain yang diinginkan, kita dapat memulai dengan mengkustomisa
 Setelah menerapkan kustomisasi, penting untuk melakukan pengujian dan perbaikan jika diperlukan. Pastikan tampilan dan fungsionalitas halaman sesuai dengan yang diinginkan. Selanjutnya, dokumentasikan semua perubahan yang kita buat agar mudah diakses oleh kita atau tim kita di masa mendatang.
 
 Dengan langkah-langkah ini, kita dapat menghasilkan tampilan yang sesuai dengan desain yang diinginkan pada halaman-halaman tersebut, baik dengan menggunakan CSS biasa maupun dengan memanfaatkan framework CSS yang kita pilih.
+
+19. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+Asynchronous programming dan synchronous programming adalah dua paradigma yang berbeda dalam pengembangan perangkat lunak. Perbedaannya terletak pada cara pengeksekusian tugas atau operasi. Synchronous programming adalah pendekatan di mana tugas dieksekusi satu per satu secara berurutan. Di sisi lain, asynchronous programming memungkinkan tugas untuk dieksekusi secara bersamaan tanpa harus menunggu yang satu selesai sebelum yang lain dimulai. Ini membuat aplikasi tetap responsif, bahkan saat tugas yang memakan waktu lama sedang berjalan.
+
+20. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+Paradigma event-driven programming adalah pendekatan di mana aplikasi merespons peristiwa (events) yang terjadi, seperti klik tombol atau penerimaan data dari server, tanpa harus menunggu proses tersebut selesai. Contoh penerapannya adalah ketika menggunakan AJAX untuk mengambil data dari server. kita dapat mengatur event handler untuk merespons ketika data telah selesai diunduh dan kemudian memproses data tersebut tanpa menghalangi eksekusi aplikasi.
+
+21. Jelaskan penerapan asynchronous programming pada AJAX.
+    
+Penerapan asynchronous programming pada AJAX terjadi ketika kita mengirim permintaan HTTP ke server tanpa harus menunggu server mengembalikan respons. kita dapat melanjutkan eksekusi aplikasi kita dan menentukan callback function yang akan dipanggil ketika respons dari server sudah diterima. Hal ini memungkinkan aplikasi tetap responsif dan tidak terblokir oleh operasi jaringan yang memakan waktu.
+
+22. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+    
+Dalam perbandingan antara Fetch API dan library jQuery untuk penerapan AJAX, keduanya memiliki kelebihan dan kelemahan masing-masing. Fetch API adalah bagian dari stkitar JavaScript modern yang lebih ringan dan memiliki dukungan built-in untuk promises, sehingga memungkinkan untuk mengimplementasikan AJAX dengan pendekatan yang lebih modern dan lebih mudah dipelajari. Di sisi lain, jQuery adalah library yang lebih besar dan memberikan sejumlah utilitas tambahan untuk manipulasi DOM dan animasi, selain dari AJAX. Pilihan antara keduanya tergantung pada kebutuhan proyek, dan tergantung pada skala proyek, kebutuhan fungsional, dan preferensi kita.
+
+23. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+Pertama, kita perlu mengubah kode cards data item agar mendukung AJAX GET. Ini melibatkan penggunaan JavaScript (misalnya, Fetch API) untuk mengambil data item dari basis data melalui permintaan AJAX GET. Pastikan data yang diterima dapat diubah menjadi format JSON dan diperbarui dalam tampilan.
+
+Kemudian, kita dapat membuat tombol yang membuka modal dengan form penambahan item. Tombol ini akan mengaktifkan JavaScript yang menampilkan modal. Di dalam modal, buat form untuk memasukkan detail item baru dan pastikan ada tombol "Simpan".
+
+Selanjutnya, hubungkan form tersebut ke path /create-ajax/ dalam aplikasi Django kita. Di tampilan yang sesuai, buat form yang akan mengirim data ke server menggunakan metode POST.
+
+Buat juga fungsi view baru di Django untuk menangani permintaan POST dari form tersebut. Di dalam fungsi view ini, kita dapat memproses data yang dikirimkan, menambahkan item baru ke basis data, dan mengirim respons yang sesuai (biasanya respons JSON).
+
+Setelah menambahkan item baru, gunakan JavaScript untuk melakukan permintaan AJAX GET lagi. Hal ini akan memperbarui daftar item pada halaman utama secara asinkronus, sehingga kita dapat menampilkan daftar item terbaru tanpa harus memuat ulang seluruh halaman.
+
+Akhirnya, perintah collectstatic digunakan untuk mengumpulkan file-file static seperti CSS, JavaScript, dan gambar ke dalam satu direktori yang dapat dengan mudah disajikan pada produksi. Pastikan untuk menjalankan perintah ini untuk mengumpulkan file-file tersebut.
+
+Dengan mengikuti langkah-langkah di atas, kita dapat mengimplementasikan checklist tugas ini dengan menggunakan AJAX untuk mendukung operasi GET dan POST secara asinkronus dalam aplikasi kita. Pastikan untuk mengintegrasikan JavaScript dan Django dengan baik untuk mencapai fungsionalitas yang diinginkan.
+
+
+
+
 
