@@ -137,7 +137,6 @@ def add_product_ajax(request):
         return HttpResponse(b"CREATED", status=201)
     return HttpResponseNotFound()
 
-@csrf_exempt
 def delete_product_ajax(request):
     if request.method == 'DELETE':
         product = Product.objects.get(pk = id)
